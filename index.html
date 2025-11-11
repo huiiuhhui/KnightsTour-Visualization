@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>马踏棋盘演示</title>
+    <link rel="icon" type="image/x-icon" href="./象棋_16x16.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="info"></div>
+      <div class="chessboard"></div>
+      <div class="controls">
+        <label class="form__label"> x:</label>
+        <input
+          type="number"
+          class="form__input form__input--x"
+          min="1"
+          max="8"
+        />
+
+        <label class="form__label"> y:</label>
+        <input
+          type="number"
+          class="form__input form__input--y"
+          min="1"
+          max="8"
+        />
+        <button class="btn start_position">确认初始位置</button>
+
+        <label for="speedRange">速度：</label>
+        <input
+          type="range"
+          id="speedRange"
+          min="10"
+          max="500"
+          value="100"
+          step="10"
+        />
+        <span id="speedValue">100ms</span>
+
+        <button class="btn start">开始</button>
+        <button class="btn pause">暂停</button>
+        <button class="btn reset">重置</button>
+        <button class="display_bysteps">直接按步数展示结果</button>
+        <button id="authorBtn" class="btn">作者信息</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
