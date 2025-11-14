@@ -177,7 +177,11 @@ button,
   border-radius: 10px;
   padding: 8px 16px;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--accent-color), var(--accent-strong));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    var(--accent-strong)
+  );
   color: #041424;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -235,7 +239,10 @@ button:hover,
 .manual-board {
   flex: 0 0 auto;
   display: grid;
-  grid-template-columns: repeat(var(--manual-board-size), var(--manual-cell-size));
+  grid-template-columns: repeat(
+    var(--manual-board-size),
+    var(--manual-cell-size)
+  );
   grid-template-rows: repeat(var(--manual-board-size), var(--manual-cell-size));
   gap: 6px;
   padding: 18px;

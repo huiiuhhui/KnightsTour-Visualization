@@ -391,9 +391,7 @@ const createManualBoard = () => {
   manualBoardEl.appendChild(frag);
 };
 
-const resetManualBoard = (
-  message = "点击任意格开始你的路线。"
-) => {
+const resetManualBoard = (message = "点击任意格开始你的路线。") => {
   resetManualMatrices();
   updateManualBoardView();
   updateManualInfo(message);
