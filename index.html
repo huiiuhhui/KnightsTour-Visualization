@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>马踏棋盘演示</title>
+    <link rel="icon" type="image/x-icon" href="./马_16x16.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="module module--auto">
+        <header class="module__header">
+          <h1>马踏棋盘自动演示</h1>
+          <p>设定棋盘、起点以及播放速度，观察贪心策略给出的骑士巡游路径。</p>
+        </header>
+        <div class="auto-area">
+          <div class="board-wrapper">
+            <div class="info" aria-live="polite">等待选择起点…</div>
+            <div class="chessboard" aria-label="自动演示棋盘"></div>
+          </div>
+          <form class="controls" autocomplete="off">
+            <label class="form__label">棋盘尺寸 (N × N)</label>
+            <div class="control-group">
+              <input
+                type="number"
+                class="form__input form__input--size"
+                min="5"
+                max="12"
+                value="8"
+              />
+              <button type="button" class="btn apply_board_size">应用</button>
+            </div>
+
+            <label class="form__label">起点坐标 (x, y)</label>
+            <div class="control-group">
+              <input
+                type="number"
+                class="form__input form__input--x"
+                min="1"
+                max="8"
+              />
+              <input
+                type="number"
+                class="form__input form__input--y"
+                min="1"
+                max="8"
+              />
+              <button type="button" class="btn start_position">计算路径</button>
+            </div>
+
+            <label for="speedRange" class="form__label">动画速度</label>
+            <div class="control-group">
+              <input
+                type="range"
+                id="speedRange"
+                min="10"
+                max="500"
+                value="100"
+                step="10"
+              />
+              <span id="speedValue">100ms</span>
+            </div>
+
+            <div class="control-group control-group--actions">
+              <button type="button" class="btn start">开始演示</button>
+              <button type="button" class="btn pause">暂停</button>
+              <button type="button" class="btn reset">重置</button>
+              <button type="button" class="btn display_bysteps">
+                按步数显示
+              </button>
+            </div>
+
+            <button type="button" id="authorBtn" class="btn btn--ghost">
+              作者信息
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="module module--manual">
+        <header class="module__header">
+          <h2>手动试一试</h2>
+          <p>
+            下面是一个独立棋盘。点击任意格作为起点，继续点击符合骑士走法的格子即可记录自己的巡游路径。
+          </p>
+        </header>
+        <div class="manual-controls">
+          <label class="form__label">练习棋盘尺寸 (N × N)</label>
+          <div class="control-group">
+            <input
+              type="number"
+              class="form__input manual-size-input"
+              min="5"
+              max="12"
+              value="8"
+            />
+            <button type="button" class="btn manual-apply-size">应用</button>
+          </div>
+        </div>
+        <div class="manual-panel">
+          <div class="manual-info" aria-live="polite">
+            点击任一格开始你的路线。
+          </div>
+          <div class="manual-board" aria-label="手动尝试棋盘"></div>
+        </div>
+        <div class="manual-actions">
+          <button type="button" class="btn manual-undo">撤销一步</button>
+          <button type="button" class="btn manual-reset">清空棋盘</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
